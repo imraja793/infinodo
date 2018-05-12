@@ -1,0 +1,2 @@
+# infinodo
+expense-management application
