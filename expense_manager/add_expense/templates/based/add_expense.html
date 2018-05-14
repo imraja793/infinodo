@@ -4,23 +4,17 @@
 {% block body_block %}
   <div class="container">
     <div class="jumbotron">
-      {% if registered %}
-        <h1>Thank you for registering!</h1>
+      {% if expense_added %}
+        <h1>Expense Added</h1>
       {% else %}
-        <h1>Register Here</h1>
-        <h3>Just fill out the form.</h3>
-
+        <h1>Add the expense</h1>
         <form method="POST">
           {% csrf_token %}
-          {{ user_form.as_p }}
-          {{ profile_form.as_p }}
-          <input type="submit" name="" value="Register">
+          {{ add_expense_form.as_p }}
+          <input type="submit" value="Add Expense">
         </form>
-
       {% endif %}
-
     </div>
-
   </div>
-
 {% endblock %}
+

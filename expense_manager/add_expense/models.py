@@ -1,17 +1,12 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
 
-# Create your models here.
+
 class AddExpense(models.Model):
-
-    expensetitle = models.CharField(max_length=20)
-    amount = models.DecimalField(decimal_places=2, max_digits=10)
-    currency = models.CharField(max_length=23)
-    paymenttype = models.CharField(max_length=30)
-    expensetype = models.CharField(max_length=200)
-    vendorname = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.expensetitle
+    expense_title = models.CharField('Expense Title', max_length=20)
+    amount = models.DecimalField('Amount', decimal_places=2, max_digits=10)
+    currency = models.CharField('Currency', max_length=23)
+    payment_type = models.CharField('Payment Type', max_length=30)
+    expense_type = models.CharField('Expense Type', max_length=200, blank=True)
+    vendor_name = models.CharField('Vendor Name', max_length=200, blank=True)
